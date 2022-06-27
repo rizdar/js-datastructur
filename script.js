@@ -33,46 +33,90 @@ const restaurant = {
   },
 };
 
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                           //
+//  {} {} {}  {} {}          Rest pattern  and parameters                            //
+//                                                                                                           //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const newArr = [1, 2, ...arr];
-console.log(newArr);
+//Spread, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
 
-console.log(...newArr);
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
-console.log(newMenu);
+//1) Destructuring
+//Rest, because on left side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
 
-//copy array
-const mainMenuCopy = [...restaurant.mainMenu];
-
-//join 2 array / more
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
-
-//iterables: arrays, strings, maps, sets, Not Object
-const str = 'Rizki';
-const letters = [...str, '', 'D.'];
-console.log(letters);
-console.log(...str);
-
-const ingredients = [
-  // prompt("let's make pasta! Ingredient 1?"),
-  // prompt('Ingredient 2?'),
-  // prompt('Ingredient 3?'),
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  restaurant.starterMenu,
 ];
-
-restaurant.orderPasta(...ingredients);
+console.log(pizza, risotto, otherFood);
 
 //Objects
-const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
-console.log(newRestaurant);
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
 
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = 'Ristorance Roma';
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+//2) functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(2, 3);
+add(2, 3, 4, 65, 2);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                           //
+//  {} {} {}  {} {}       the spread operator     //
+//                                                                                                           //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
+
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
+
+// console.log(...newArr);
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
+
+// //copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
+
+// //join 2 array / more
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+
+// //iterables: arrays, strings, maps, sets, Not Object
+// const str = 'Rizki';
+// const letters = [...str, '', 'D.'];
+// console.log(letters);
+// console.log(...str);
+
+// const ingredients = [
+//   // prompt("let's make pasta! Ingredient 1?"),
+//   // prompt('Ingredient 2?'),
+//   // prompt('Ingredient 3?'),
+// ];
+
+// restaurant.orderPasta(...ingredients);
+
+// //Objects
+// const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+// console.log(newRestaurant);
+
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'Ristorance Roma';
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
