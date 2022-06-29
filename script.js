@@ -33,28 +33,40 @@ const restaurant = {
   },
 };
 
+restaurant.numGuest = 0;
+const guest = restaurant.numGuest ?? 10;
+console.log(guest);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                           //
+//  {} {} {}  {} {}          && and ||                            //
+//                                                                                                           //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 //Use any data type, return any data type, short-circutting
 
-console.log('---OR---');
-console.log(3 || 'rizki');
-console.log('' || 'rizki');
-console.log(true || 0);
-console.log(undefined || null);
+// console.log('---OR---');
+// console.log(3 || 'rizki');
+// console.log('' || 'rizki');
+// console.log(true || 0);
+// console.log(undefined || null);
 
-console.log(undefined || 0 || '' || 'hello' || 23 || null);
+// console.log(undefined || 0 || '' || 'hello' || 23 || null);
 
-// restaurant.numGuests = 23;
-const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guest1);
+// // restaurant.numGuests = 23;
+// const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guest1);
 
-const guest2 = restaurant.numGuests || 10;
-console.log(guest2);
+// const guest2 = restaurant.numGuests || 10;
+// console.log(guest2);
 
-console.log('---AND---');
-console.log(0 && 'Rizki');
-console.log(7 && 'Rizki');
+// console.log('---AND---');
+// console.log(0 && 'Rizki');
+// console.log(7 && 'Rizki');
 
-console.log('hello' && 23 && null && 'rizki');
+// console.log('hello' && 23 && null && 'rizki');
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
